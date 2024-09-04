@@ -1,0 +1,44 @@
+package introduction;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class CssLocatorTwo {
+	    public static void main(String[] args) {
+	        // Set the path to your WebDriver executable
+	        System.setProperty("webdriver.chrome.driver", "path/to/chromedriver");
+
+	        // Create a new instance of the Chrome driver
+	        WebDriver driver = new ChromeDriver();
+
+	        // Open the Selenium website
+	        driver.get("https://www.selenium.dev");
+
+	        // 1. Locate an element using tag and attribute (Example: search input field)
+	        WebElement searchInput = driver.findElement(By.cssSelector("input[type='search']"));
+
+	        // 2. Locate an element using tag, class, and attribute (Example: Download button)
+	        WebElement downloadButton = driver.findElement(By.cssSelector("a.nav-link[href='/downloads']"));
+
+	        // 3. Locate an element using ID (Example: <div id="main_navbar">)
+	        WebElement mainNavbar = driver.findElement(By.cssSelector("#main_navbar"));
+
+	        // 4. Locate an element using class (Example: <div class="navbar-brand">)
+	        WebElement navbarBrand = driver.findElement(By.cssSelector(".navbar-brand"));
+
+	        // 5. Chaining selectors (Example: inside a specific section, find a link)
+	        WebElement projectsLink = driver.findElement(By.cssSelector("div.container-fluid a[href='/projects']"));
+
+	        // Perform actions or print details of located elements
+	        System.out.println("Search Input Placeholder: " + searchInput.getAttribute("placeholder"));
+	        System.out.println("Download Button Text: " + downloadButton.getText());
+	        System.out.println("Main Navbar Tag Name: " + mainNavbar.getTagName());
+	        System.out.println("Navbar Brand Text: " + navbarBrand.getText());
+	        System.out.println("Projects Link Text: " + projectsLink.getText());
+
+	        // Close the browser
+	        driver.quit();
+	    }
+	}
+

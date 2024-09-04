@@ -1,0 +1,21 @@
+package introduction;
+
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class FirstTestCase {
+	public static void main(String[] args) {
+	//	System.out.println("Testing");
+		
+		// open chrome browser
+		ChromeDriver driver = new ChromeDriver();
+		// 2) open website
+		driver.get("https://www.opencart.com/");
+		// validate title should be OpenCart
+		String title = driver.getTitle();
+		if(title.equals("OpenCart - Open Source Shopping Cart Solution")) {
+			System.out.println("Test Passes");
+		}else {
+			System.out.println("Test Failed");
+		}
+}
+}

@@ -1,0 +1,20 @@
+package introduction;
+
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+
+public class Locators {
+	public static void main(String[] args) {
+	//	System.out.println("Testing");
+		
+		// open chrome browser
+		WebDriver driver = new ChromeDriver();
+		//maximize browser
+		driver.manage().window().maximize();
+		// 2) open website
+		driver.get("https://demo.opencart.com/");
+		driver.findElement(By.name("search")).sendKeys("Mac");
+		
+}
+}

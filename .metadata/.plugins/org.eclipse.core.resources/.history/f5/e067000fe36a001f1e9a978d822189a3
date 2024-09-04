@@ -1,0 +1,32 @@
+package introduction;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
+
+public class dropdowns {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		// 1) select dropdown
+		// 2) Bootstrap dropdown
+		// 3) hidden dropdwon
+		
+		// select dropdownm
+		WebDriver driver = new ChromeDriver();
+		driver.get("https://testautomationpractice.blogspot.com/");
+		WebElement countryDropdown = driver.findElement(By.xpath("//select[@id='country']"));
+		Select dropdown = new Select(countryDropdown);
+		// there are three way we can select dropdown
+		//selectByVisibleText()
+		//selectByValue();
+		//selectByIndex();
+		dropdown.selectByVisibleText("Canada");
+		dropdown.deselectAll();
+
+	}
+
+}
+

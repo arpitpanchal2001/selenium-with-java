@@ -1,0 +1,13 @@
+package introduction;
+
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class FirstTestCase {
+	public static void main(String[] args) {
+	//	System.out.println("Testing");
+		
+		// open chrome browser
+		ChromeDriver driver = new ChromeDriver();
+		driver.get("https://www.opencart.com/");
+}
+}

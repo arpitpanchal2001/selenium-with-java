@@ -1,0 +1,26 @@
+package introduction;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class WebDriverMethodConditional {
+	public static void main(String[] args) {
+		//conditional methods
+		// we can access these command through Webelement returns boolean(True/False)
+		// isDisplayed
+		// isEnabled
+		// isSelected
+		
+		WebDriver driver = new ChromeDriver();
+		//maximize browser
+		driver.manage().window().maximize();
+		//get(url)
+		driver.get("https://demo.nopcommerce.com/register");
+		
+		WebElement logo =  driver.findElement(By.xpath("//img[@alt = 'nopCommerce demo store']"));
+		System.out.println(logo.isDisplayed());
+	}
+
+}

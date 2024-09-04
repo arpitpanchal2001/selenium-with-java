@@ -1,0 +1,23 @@
+package introduction;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+
+public class WebdriverWaitMethod {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		//Thread.sleep() is provided by java itself not by webdriver
+		
+		//webdriver provides 
+		// 1) implicit wait
+		// 2) explicit wait/fluent wait 
+		
+		
+		WebDriver driver = new ChromeDriver();
+		driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
+		driver.findElement(By.xpath("//input[@placeholder='Username']")).sendKeys("Admin");
+
+	}
+
+}
