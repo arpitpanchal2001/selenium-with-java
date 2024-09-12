@@ -17,6 +17,7 @@ public class HandleBrowserWindow {
 		WebDriver driver = new ChromeDriver();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 		driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
+		String originalWindow = driver.getWindowHandle();
 		driver.findElement(By.linkText("OrangeHRM, Inc")).click();
 		Set<String> ids = driver.getWindowHandles();
 		
@@ -31,7 +32,11 @@ public class HandleBrowserWindow {
 		//approach 2
 		for(String id:ids)
 		{
-			
+			 if (!id.equals(originalWindow)) {
+                 // Switch to the new window
+                 driver.switchTo().window(id);
+                 break;
+             }
 		}
 
 	}

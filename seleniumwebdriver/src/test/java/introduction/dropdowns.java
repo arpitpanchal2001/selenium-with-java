@@ -46,7 +46,11 @@ public class dropdowns {
 		List<WebElement> bootdropdown = driver.findElements(By.xpath("//ul[contains(@class,'multiselect-container')]//label[@class='checkbox']"));
 		for(WebElement boot:bootdropdown) {
 			System.out.println(boot.getText());
+		
 		}
+		
+		//hidden drop down
+		
 	}
 
 }

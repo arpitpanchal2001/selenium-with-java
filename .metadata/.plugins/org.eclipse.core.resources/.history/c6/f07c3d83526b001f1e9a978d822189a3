@@ -1,0 +1,41 @@
+package introduction;
+import java.time.Duration;
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+public class StaticWebStable {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		WebDriver driver = new ChromeDriver();
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+		driver.get("https://testautomationpractice.blogspot.com/");
+		List<WebElement> rows = driver.findElements(By.xpath("//table[@name='BookTable']/tbody/tr"));
+		System.out.println("Number of rows : " + rows.size());
+		
+		List<WebElement> columns = driver.findElements(By.xpath("//table[@name='BookTable']/tbody/tr/th"));
+		System.out.println("columns is table : " + columns.size());
+		
+		//to find element from 5th row and first column
+		String masterInSelenium = driver.findElement(By.xpath("//table[@name='BookTable']/tbody/tr[5]/td[1]")).getText();
+		if(masterInSelenium.equals("Master In Selenium")) {
+			System.out.println("Test Passes");
+		}else {
+			System.out.println("Test Failed");
+		}
+		
+		//Read data from  all rows
+		for(int r =1;r<rows.size();r++) {
+			
+			for(int j = 0;j<columns.size();j++) {
+				String value = driver.findElement(By.xpath("//table[@name='BookTable']///tr["+r+"]//td["+j+"]")).getText();
+				System.out.println(value);
+			}
+		}
+
+	}
+
+}
